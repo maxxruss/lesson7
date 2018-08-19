@@ -2,6 +2,7 @@
 
 namespace app\models;
 
+use app\models\query\NoteQuery;
 use Yii;
 
 /**
@@ -24,6 +25,12 @@ class Note extends \yii\db\ActiveRecord
     {
         return 'evrnt_note';
     }
+
+    public static function find(): NoteQuery
+    {
+        return new NoteQuery(get_called_class());
+    }
+
 
     /**
      * @inheritdoc

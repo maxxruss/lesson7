@@ -4,7 +4,7 @@ namespace app\controllers;
 
 use app\models\Access;
 use app\models\forms\NoteForm;
-use app\models\User;
+use app\objects\ViewModels\NoteCreateView;
 use Yii;
 use app\models\Note;
 use app\models\search\NoteSearch;
@@ -127,12 +127,14 @@ class NoteController extends Controller
     {
         $model = new NoteForm();
 
+
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
-        $viewModel = new User();
-            return $this->render('create', [
+        $viewModel = new NoteCreateView();
+
+        return $this->render('create', [
                 'model' => $model,
                 'viewModel' => $viewModel,
             ]);

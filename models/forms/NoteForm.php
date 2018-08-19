@@ -34,8 +34,8 @@ class NoteForm extends Note
     public function afterFind()
     {
         parent::afterFind();
-        $this->users = Access::find();
-        print_r($this->users);exit;
+        $this->users = Access::find()->select(['user_id'])->andWhere(['note_id' => $this->id])->column();
+        //print_r($this->users);exit;
         //print_r($this->users);exit;
 
     }

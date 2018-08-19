@@ -15,6 +15,12 @@ class NoteQuery extends \yii\db\ActiveQuery
         return $this;
     }*/
 
+    public function byDates(array $dates): self
+    {
+
+        return $this->andWhere(['in', 'created_at', $dates]);
+    }
+
     /**
      * @inheritdoc
      * @return \app\models\Note[]|array

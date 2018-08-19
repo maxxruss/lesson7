@@ -29,7 +29,8 @@
     "clue/redis-server": "^0.1.0",
     "dmstr/yii2-adminlte-asset": "^2.1",
     "fxp/composer-asset-plugin": "^1.4",
-    "kartik-v/yii2-widgets": "3.4.*"
+    "kartik-v/yii2-widgets": "3.4.*",
+    "kartik-v/yii2-widget-select2": "@dev"
   },
   "require-dev": {
     "yiisoft/yii2-debug": "~2.0.0",
